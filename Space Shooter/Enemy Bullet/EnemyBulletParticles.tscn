@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Bullet/BulletParticles.gd" type="Script" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.674286, 1 )
+colors = PoolColorArray( 0.964844, 0.0678406, 0.0678406, 1, 0.811765, 0.0705881, 0.0705881, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 1
+emission_sphere_radius = 0.01
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 30.91
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 200.0
+initial_velocity_random = 0.31
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+color_ramp = SubResource( 2 )
+
+[node name="EnemyBulletParticles" type="Particles2D"]
+lifetime = 0.4
+explosiveness = 0.86
+process_material = SubResource( 3 )
+script = ExtResource( 1 )
